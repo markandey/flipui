@@ -20,10 +20,10 @@ My approach is simple I used basic CSS3 attribute
 </code></pre>
 
 To achieve complete flip of a page you need to add CSS style of <pre><code>-webkit-transform: rotateX(180deg);</code></pre>
-Problem with 180 flip is your HTML content goes upside down, to simulate flipboard like animation you can not flip it complete 180 degrees
+Problem with 180 flip is your HTML content goes upside down, to simulate flipboard like animation you can not flip it complete 180 degrees.
 
+This code flip 90 degree for <i>first half of the flip</i> and back to zero degree for <i>second half of the flip</i>, To fake half page flip it adds mask at the top during the <i>first half of the flip</i> and then, mask moved down for the second half.
 
-To avoid this just flip 90 degree and back to zero degree, To fake half page flip I added a mask on it so that one half of animation is not visible.
 
 
 Problems on iPhone's Safari
