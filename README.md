@@ -19,8 +19,8 @@ My approach is simple I used basic CSS3 attribute
 -webkit-transform: rotateX(180deg);
 -webkit-transition-duration: 2s;
 </code></pre>
-Step-1:
-To achieve complete flip of a page you need to add CSS style of -webkit-transform: rotateX(180deg);
+
+To achieve complete flip of a page you need to add CSS style of <pre><code>-webkit-transform: rotateX(180deg);</code></pre>
 Problem with 180 flip is your HTML content goes upside down, to simulate flipboard like animation you can not flip it complete 180 degrees
 
 
@@ -36,11 +36,14 @@ This mask thing could not work properly because In  iPhone's safari when a objec
 Touch events on iPhone have some serious problem, i encountered weird problem with event propagation.
 
 
-
+READ More 
+-----------------
+http://www.markandey.com/2011/12/flipboard-like-ui-on-iphone-safari.html
 
 Limitations!
 -----------------
-
+ - It flickers sometime
+ - Works only on chrome and iPhone
 
 Demo?
 ----------
