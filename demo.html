@@ -1,0 +1,92 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>flip</title>
+<script type="text/javascript" src="http://www.google.com/jsapi"></script> 
+    <script type="text/javascript"> 
+		google.load("jquery", "1.7.1");
+  		google.load("jqueryui", "1.8.16");
+    </script> 
+<style>
+html,body{
+	background:#ddd;
+	height:450px;
+	margin:0px;
+	padding:0px;
+	color:white;
+	text-align:center;
+}
+#main{
+	margin:auto;
+	padding:5px;
+	background:transparent;
+}
+#flip{
+	background:#ddd;
+}
+.prev{
+	margin:0px;
+	overflow:hidden;
+	background:#000;
+}
+.next{
+	margin:0px;
+	padding:0px;
+	overflow:hidden;
+	background:#000;	
+}
+.main{
+	overflow:hidden;
+	background:transparent;	
+}
+.content{
+	margin:0px;
+	padding:0px;
+	height:100%;
+	width:100%;
+	font-size:100%;
+	
+}
+.main .content{
+	overflow:hidden;
+	background:#000;
+}
+#mask{
+	background:rgba(128,128,0,0.0);	
+}
+
+</style>
+<script src="../js/flip-it.js">
+</script>
+<script>
+
+var htmls=[];
+function render(data){
+	for(var i=0;i<data.query.results.photo.length;i++){
+		var photo=data.query.results.photo[i];
+		var url="http://farm{farm-id}.staticflickr.com/{server-id}/{id}_{secret}_m.jpg";
+		url=url.replace('{farm-id}',photo.farm);
+		url=url.replace('{server-id}',photo.server);
+		url=url.replace('{id}',photo.id);
+		url=url.replace('{secret}',photo.secret);
+		var img="<img width='300' src='{imgurl}'><h1>{title}</h1>";
+		img=img.replace('{imgurl}',url);
+		img=img.replace('{title}',photo.title);
+		htmls[i]=img;
+	}
+	makeflip('#main',300,400,htmls);
+}
+$(document).ready(function() {
+	window.scrollTo(0, 1);
+});
+</script>
+
+</head>
+<body>
+<div id="main">
+
+</div>
+<script src="http://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20flickr.photos.interestingness(20)%20where%20api_key%3D'0fbb2b721757f77a6a9d038f4649a2bf'&format=json&diagnostics=true&callback=render">
+</script>
+</body>
+</html>
