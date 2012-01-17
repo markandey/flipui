@@ -7,9 +7,7 @@ How to Use?
 Something goes here
 
 <pre><code>
-
 makeflip(&lt;DOM selector&gt;,&lt;width>,&lt;height&gt;,&lt;html array of content&gt;);
-
 </code></pre>
 
 How Code Works?
@@ -18,6 +16,7 @@ My approach is simple I used basic CSS3 attribute
 <pre><code>
 -webkit-transform: rotateX(180deg);
 -webkit-transition-duration: 2s;
+
 </code></pre>
 
 To achieve complete flip of a page you need to add CSS style of <pre><code>-webkit-transform: rotateX(180deg);</code></pre>
