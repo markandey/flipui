@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Flip UI : Flipboard like interface for web" />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Flip UI</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/markandey/flipui">Fork Me on GitHub</a>
+
+          <h1 id="project_title">Flip UI</h1>
+          <h2 id="project_tagline">Flipboard like interface for web</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/markandey/flipui/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/markandey/flipui/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>FLIP UI</h1>
+
+<p>FLIP UI is pure html, javascript solution to bring flipboard like UI in iPhone as webpage. </p>
+
+<h2>How to Use?</h2>
+
+<p>Something goes here</p>
+
+<pre><code>
+makeflip(&lt;DOM selector&gt;,&lt;width&gt;,&lt;height&gt;,&lt;html array of content&gt;);
+</code></pre>
+
+<h2>How Code Works?</h2>
+
+<p>My approach is simple I used basic CSS3 attribute</p>
+
+<pre><code>
+-webkit-transform: rotateX(180deg);
+-webkit-transition-duration: 2s;
+
+</code></pre>
+
+<p>To achieve complete flip of a page you need to add CSS style of </p><pre><code>-webkit-transform: rotateX(180deg);</code></pre>
+Problem with 180 flip is your HTML content goes upside down, to simulate flipboard like animation you can not flip it complete 180 degrees.
+
+<p>This code flip 90 degree for <i>first half of the flip</i> and back to zero degree for <i>second half of the flip</i>, To fake half page flip it adds mask at the top during the <i>first half of the flip</i> and then, mask moved down for the second half.</p>
+
+<h2>Problems on iPhone's Safari</h2>
+
+<ul>
+<li><p>z-order problem on webkit, with 3D transform
+This mask thing could not work properly because In  iPhone's safari when a object is  3D transformed , z-order does not work properly.  I worked around it by making one half of page to transparent.</p></li>
+<li><p>Touch Events of iPhone
+Touch events on iPhone have some serious problem, i encountered weird problem with event propagation.</p></li>
+</ul><h2>READ More </h2>
+
+<p><a href="http://www.markandey.com/2011/12/flipboard-like-ui-on-iphone-safari.html">http://www.markandey.com/2011/12/flipboard-like-ui-on-iphone-safari.html</a></p>
+
+<h2>Limitations!</h2>
+
+<ul>
+<li>It flickers sometime</li>
+<li>Works only on chrome and iPhone</li>
+</ul><h2>Demo?</h2>
+
+<p>You can see working Demo Here <a href="http://www.purplegene.com/static/flip3.html">http://www.purplegene.com/static/flip3.html</a></p>
+
+<h3>Authors and Contributors</h3>
+
+<p>This project was created by <a href="/markandey" class="user-mention">@markandey</a></p>
+
+<h3>Support or Contact</h3>
+
+<p>markandey{dot}singh{at}gmaildotcom</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Flip UI maintained by <a href="https://github.com/markandey">markandey</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
